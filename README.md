@@ -12,8 +12,16 @@ Generic configuration can be driven by exporting the following enviroment variab
 | PUPPET_FORGE_SERVER_CACHE_DIR | Proxy module cache base directory (default: /srv/puppet-forge-server/cache) |
 | PUPPET_FORGE_SERVER_LOG_DIR | Log directory (default: /srv/puppet-forge-server/logs) |
 | PUPPET_FORGE_SERVER_MODULEDIR | Directory containing packaged modules (recursively searched) |
+| PUPPET_FORGE_SERVER_USER | User that will run server process (default: forge)
 | PUPPET_FORGE_SERVER_PROXY | Remote forge URL |
 | PUPPET_FORGE_SERVER_DEBUG | Log everything into STDERR |
+
+By default container is build to use user `forge` with uid: 576. If you like to use other uid, the image needs to be rebuild for ex.:
+
+```
+FROM m4ce/puppet-forge-server
+ENV PUPPET_FORGE_SERVER_USER_ID 999
+```
 
 ## Run
 ```
