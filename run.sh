@@ -5,6 +5,8 @@
 # Author: Matteo Cerutti <matteo.cerutti@hotmail.co.uk>
 #
 
+PUPPET_FORGE_SERVER_CACHE_SIZE=${PUPPET_FORGE_SERVER_CACHE_SIZE:-250}
+PUPPET_FORGE_SERVER_CACHE_TTL=${PUPPET_FORGE_SERVER_CACHE_TTL:-1800}
 PUPPET_FORGE_SERVER_PORT=${PUPPET_FORGE_SERVER_PORT:-8080}
 PUPPET_FORGE_SERVER_USER=${PUPPET_FORGE_SERVER_USER:-$(whoami)}
 homedir=$( getent passwd "${PUPPET_FORGE_SERVER_USER}" | cut -d: -f6 )
@@ -36,7 +38,7 @@ echo "Starting puppet-forge-server"
 exec bundle exec puppet-forge-server \
   --port $PUPPET_FORGE_SERVER_PORT \
   --cache-basedir $PUPPET_FORGE_SERVER_CACHE_DIR \
-  --ram-cache-ttl 1800 \
-  --ram-cache-size 1000 \
+  --ram-cache-ttl $PUPPET_FORGE_SERVER_CACHE_TTL \
+  --ram-cache-size $PUPPET_FORGE_SERVER_CACHE_SIZE \
   --log-dir $PUPPET_FORGE_SERVER_LOG_DIR \
   $PUPPET_FORGE_SERVER_OPTS
