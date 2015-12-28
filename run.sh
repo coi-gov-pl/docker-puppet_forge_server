@@ -33,8 +33,10 @@ mkdir -p $PUPPET_FORGE_SERVER_CACHE_DIR
 mkdir -p $PUPPET_FORGE_SERVER_LOG_DIR
 
 echo "Starting puppet-forge-server"
-exec puppet-forge-server \
+exec bundle exec puppet-forge-server \
   --port $PUPPET_FORGE_SERVER_PORT \
   --cache-basedir $PUPPET_FORGE_SERVER_CACHE_DIR \
+  --ram-cache-ttl 1800 \
+  --ram-cache-size 1000 \
   --log-dir $PUPPET_FORGE_SERVER_LOG_DIR \
   $PUPPET_FORGE_SERVER_OPTS
