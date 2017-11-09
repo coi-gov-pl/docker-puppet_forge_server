@@ -19,7 +19,7 @@ WORKDIR $PUPPET_FORGE_SERVER_BASEDIR
 USER $PUPPET_FORGE_SERVER_USER
 
 RUN echo "source 'https://rubygems.org'" >> Gemfile
-RUN echo "gem 'puppet-forge-server'" >> Gemfile
+RUN echo "gem 'puppet-forge-server', :git => 'https://github.com/coi-gov-pl/puppet-forge-server.git', :branch => 'master'" >> Gemfile 
 RUN echo "gem 'puma'" >> Gemfile
 RUN cat Gemfile
 RUN bundle --retry=3
