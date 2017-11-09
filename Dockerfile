@@ -1,11 +1,8 @@
 #
 # Dockerfile
 #
-# Author: Matteo Cerutti <matteo.cerutti@hotmail.co.uk>
-#
-
 FROM centos:7
-MAINTAINER Matteo Cerutti <matteo.cerutti@hotmail.co.uk>
+MAINTAINER Krzysztof Suszyński <krzysztof.suszynski@coi.gov.pl>
 
 ENV PUPPET_FORGE_SERVER_USER forge
 ENV PUPPET_FORGE_SERVER_USER_ID 576
@@ -22,7 +19,7 @@ WORKDIR $PUPPET_FORGE_SERVER_BASEDIR
 USER $PUPPET_FORGE_SERVER_USER
 
 RUN echo "source 'https://rubygems.org'" >> Gemfile
-RUN echo "gem 'puppet-forge-server', :git => 'https://github.com/coi-gov-pl/puppet-forge-server.git', :branch => 'feature/add-cache-for-remote'" >> Gemfile
+RUN echo "gem 'puppet-forge-server'" >> Gemfile
 RUN echo "gem 'puma'" >> Gemfile
 RUN cat Gemfile
 RUN bundle --retry=3
