@@ -15,13 +15,13 @@ RUN echo ':ssl_verify_mode: 0' > ~/.gemrc
 RUN gem install bundler
 RUN useradd --system --create-home --uid $PUPPET_FORGE_SERVER_USER_ID --home-dir $PUPPET_FORGE_SERVER_BASEDIR $PUPPET_FORGE_SERVER_USER
 
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+COPY src/Gemfile Gemfile
+COPY src/Gemfile.lock Gemfile.lock
 RUN bundle --retry=3
 
 WORKDIR $PUPPET_FORGE_SERVER_BASEDIR
 USER $PUPPET_FORGE_SERVER_USER
 
-COPY run.sh /run.sh
+COPY src/run.sh /run.sh
 
 ENTRYPOINT ["/run.sh"]
