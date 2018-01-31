@@ -32,4 +32,6 @@ docker run -d --restart=always -p 8080:8080 \
 ```
 
 ## Contact
-Matteo Cerutti - matteo.cerutti@hotmail.co.uk
+Centralny Osrodek Informatyki - coi@coi.gov.pl
+
+Original version created by Matteo Cerutti - matteo.cerutti@hotmail.co.uk
