@@ -1,0 +1,66 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    PriorityQueue (0.1.2)
+    backports (3.11.1)
+    deep_merge (1.2.1)
+    haml (4.0.7)
+      tilt
+    iconv (1.0.5)
+    json (1.8.6)
+    logger-colors (1.0.0)
+    lrucache (0.1.4)
+      PriorityQueue (~> 0.1.2)
+    multi_json (1.13.1)
+    multipart-post (2.0.0)
+    open4 (1.3.4)
+    open_uri_redirections (0.2.1)
+    puma (3.11.2)
+    puppet-forge-server (1.10.1)
+      deep_merge (~> 1.0)
+      haml (~> 4.0)
+      iconv (~> 1.0.4)
+      json (~> 1.8)
+      logger-colors (~> 1.0)
+      lrucache (~> 0.1.4)
+      multipart-post (~> 2.0.0)
+      open4 (~> 1.3)
+      open_uri_redirections (~> 0.1)
+      rack (= 1.5.5)
+      rack-mount (~> 0.8)
+      redcarpet (~> 3.3.0)
+      sinatra (~> 1.4)
+      sinatra-contrib (~> 1.4)
+    rack (1.5.5)
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
+    rack-protection (1.5.3)
+      rack
+    rack-test (0.7.0)
+      rack (>= 1.0, < 3)
+    redcarpet (3.3.4)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sinatra-contrib (1.4.7)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (>= 1.3, < 3)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  puma
+  puppet-forge-server
+
+RUBY VERSION
+   ruby 2.0.0p648
+
+BUNDLED WITH
+   1.16.1
